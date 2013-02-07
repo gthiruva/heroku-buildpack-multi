@@ -45,7 +45,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       fi
 
       $dir/bin/release $1 > $1/last_pack_release.out
-      if [ -f $dir/bin/after_compile ]
+      if [ -f $dir/bin/after_compile ]; then
         source $dir/bin/after_compile
       fi
       echo "running next buildpack with environment:"
