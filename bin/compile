@@ -11,6 +11,10 @@ function indent() {
 }
 
 unset GIT_DIR
+export PATH='/usr/local/bin:/usr/bin:/bin:bin:vendor/bundle/ruby/1.9.1/bin:/usr/local/bin:/usr/bin:/bin'
+export LD_RUN_PATH='/usr/local/lib:/usr/lib:/lib'
+export LD_LIBRARY_PATH='/usr/local/lib:/usr/lib:/lib'
+export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/lib/pkgconfig'
 
 for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
