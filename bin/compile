@@ -16,6 +16,11 @@ export LD_RUN_PATH='/usr/lib64:/opt/local/lib:/usr/local/lib:/usr/lib:/lib'
 export LD_LIBRARY_PATH='/usr/lib64:/opt/local/lib:/usr/local/lib:/usr/lib:/lib'
 export PKG_CONFIG_PATH='/usr/lib64/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/lib/pkgconfig'
 
+export PATH="/app/vendor/local/bin:$PATH"
+export LD_RUN_PATH="/app/vendor/local/lib:$LD_RUN_PATH"
+export LD_LIBRARY_PATH="/app/vendor/local/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/app/vendor/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
